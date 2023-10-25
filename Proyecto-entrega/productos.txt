@@ -1,0 +1,35 @@
+const consolas = [
+    {
+        descripcion: 'Consola de hogar con gráficos en alta definición.',
+        titulo: 'PlayStation 5',
+        fechaDeCreacion: '2020-11-12',
+        precio: 499.99,
+        imagen: 'urlDeLaImagenDePS5.jpg',
+        categoria: 'Consola de Hogar'
+    },
+    {
+        descripcion: 'Consola portátil con pantalla táctil.',
+        titulo: 'Nintendo Switch',
+        fechaDeCreacion: '2017-03-03',
+        precio: 299.99,
+        imagen: 'urlDeLaImagenDeSwitch.jpg',
+        categoria: 'Consola Portátil'
+    },
+    {
+        descripcion: 'Consola de hogar con alta potencia y compatibilidad hacia atrás.',
+        titulo: 'Xbox Series X',
+        fechaDeCreacion: '2020-11-10',
+        precio: 499.99,
+        imagen: 'urlDeLaImagenDeXboxSeriesX.jpg',
+        categoria: 'Consola de Hogar'
+    },
+    {
+        descripcion: 'Consola clásica miniaturizada con juegos preinstalados.',
+        titulo: 'NES Classic Edition',
+        fechaDeCreacion: '2016-11-10',
+        precio: 59.99,
+        imagen: 'urlDeLaImagenDeNESClassic.jpg',
+        categoria: 'Consola Retro'
+    }
+    // ... Puedes continuar agregando más consolas según lo desees.
+];
