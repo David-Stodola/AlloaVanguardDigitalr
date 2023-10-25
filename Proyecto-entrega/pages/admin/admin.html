@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ADMIN</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="/CSS/administracion.css">
+
+
+  <script src="/js/guard.js"></script>
+
+
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-md bg-primary" data-bs-theme="dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <ul id="nav-list" class="navbar-nav me-auto mb-2 mb-lg-0">
+
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/index.html">Home</a>
+          </li>
+
+          <li class="nav-item">
+
+            <a class="nav-link" href="#">Contacto</a>
+            
+          </li>
+          
+        </ul>
+
+        <div class="d-flex text-white">
+            <div id="user-header-name">
+            </div>
+            <div id="user-action">
+                
+            </div>
+            
+        </div>
+      </div>
+    </div>
+  </nav>
+
+    <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary m-2" data-bs-toggle="modal" data-bs-target="#formModal">
+    Añadir
+  </button>
+
+  <div class="container-lg ">
+  
+    <div class="row">
+
+      <div class="col-12 col-md-12 bg-primary-subtle">
+        <!-- #Tabla -->
+        <div class="mb-3">
+          <label for="filtrar" class="form-label">Filtrar</label>
+          <input type="text" class="form-control" id="filtrar" placeholder="Nombre producto">
+        </div>
+        <table class="table table-dark table-striped">
+          <thead>
+            <tr>
+              <th scope="col">Imagen</th>
+              <th scope="col">Titulo</th>
+              <th scope="col">Descripcion Producto</th>
+              <th scope="col">Precio</th>
+              <th scope="col">Categoria</th>
+              <th scope="col">Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="table-body">
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="formModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <!-- #Formulario -->
+        <form id="formularioProducto">
+
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="nuevo-producto">Cargar nuevo producto</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <!-- Input -->
+            <div class="mb-3">
+              <label for="tituloProducto" class="formularioProducto">Nombre producto</label>
+              <input type="text" name="tituloName" class="form-control" id="tituloProducto" placeholder="Ej:Queso Azul"
+                required minlength="3" maxlength="70">
+            </div>
+            <!-- Input precio -->
+            <div class="mb-3 d-flex gap-3">
+              <div class="w-100">
+                <label for="precioProducto" class="formularioProducto">Precio</label>
+                <input type="number" name="precio" id="precioProducto" class="form-control" placeholder="10000" required
+                  min="1" max="20000000" step=".01">
+              </div>
+              <div class="w-100">
+                <label for="categoriaProducto" class="formularioProducto">Categoria</label>
+                <select class="form-select" id="categoriaProducto" name="categoria" required>
+                  <option value=""></option>
+                  <option value="queso-duro">Queso duro</option>
+                  <option value="queso-semiduro">Queso semiduro</option>
+                  <option value="queso-blando">Queso blando</option>
+                </select>
+              </div>
+            </div>
+            <!-- Input de la Imagen -->
+            <div class="mb-3">
+              <label for="imagen" class="form-label">URL de la imagen</label>
+              <input type="url" name="imagen" class="form-control" id="imagen"
+                placeholder="https://dirección-de-la-imagen.com" required minlength="3" maxlength="300">
+            </div>
+
+            <!-- Textarea -->
+            <div class="mb-3">
+              <label for="descripcionProducto" class="form-label">Descripcion del producto</label>
+              <textarea name="descripcion" class="form-control" id="descripcionProducto" rows="3" required minlength="8"
+                maxlength="400" placeholder="Descripción del producto...">
+          </textarea>
+            </div>
+
+            
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Cancelar</button>
+
+
+            <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Agregar producto</button>
+          </div>
+          
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script src="/js/home-p.js"></script>
+  <script src="/js/admin.js"></script>
+  <script src="/js/user-info.js"></script>
+  <script src="/js/storage.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+
+    <script>
+        const productos = JSON.parse(localStorage.getItem('productos'))
+
+        const search = window.location.search
+
+        const params = new URLSearchParams(search)
+
+        const idParams = params.get('identificador')
+
+        obtenerProducto(idParams)
+
+        function obtenerProducto(idABuscar) {
+            const producto = productos.find(productito => {
+                if(productito.id === idABuscar) {
+                    return true
+                }
+            })
+
+            if(!producto) {
+                document.write(`<h1 class="text-danger">No se encontro producto</h1>`)
+                document.write(`<a href="/index.html">Volver a productos</a>`);
+                return
+            } 
+
+            document.write(producto.titulo)
+            document.write(`<h3>${producto.descripcion}</h3>`)
+            document.write(`<img src="${producto.imagen}" />`)
+        } 
+
+        
+
+    </script>
+</body>
+</html>

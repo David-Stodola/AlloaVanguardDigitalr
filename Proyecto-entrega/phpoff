@@ -1,0 +1,4 @@
+<?php
+
+<form action="codigo.php" method="post">
+<label for=""></label></form>
